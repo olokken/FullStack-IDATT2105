@@ -5,12 +5,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
+@RestController
 public class BokController {
     static ArrayList<Bok> boeker = new ArrayList<>();
 
+
     @PostMapping("/boeker")
-    public Bok createBok(@RequestBody Bok bok){
-        bok.setISBN(boeker.size());
+    public Bok createBok(@RequestBody Bok bok) {
         boeker.add(bok);
         return bok;
     }
@@ -37,6 +38,11 @@ public class BokController {
             }
         }
         return false;
+    }
+
+    @GetMapping("/boeker")
+    public ArrayList<Bok> getBoeker() {
+        return boeker;
     }
 
 

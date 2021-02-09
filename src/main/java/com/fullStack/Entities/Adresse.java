@@ -5,6 +5,12 @@ class Adresse{
     private String by;
     private String gate;
 
+    public Adresse(int postnr, String by, String gate) {
+        this.postnr = postnr;
+        this.by = by;
+        this.gate = gate;
+    }
+
     public int getPostnr() {
         return postnr;
     }
