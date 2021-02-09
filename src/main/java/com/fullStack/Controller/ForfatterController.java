@@ -41,6 +41,11 @@ public class ForfatterController {
 
     @GetMapping
     public Forfatter finnForfatterVedNavn(@PathVariable String navn) {
-
+        for(int i = 0; i < forfattere.size(); i++) {
+            if(forfattere.get(i).getNavn().equals(navn)){
+                return forfattere.get(i);
+            }
+        }
+        return null;
     }
 }
