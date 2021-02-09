@@ -3,6 +3,7 @@ package com.fullStack.Controller;
 import com.fullStack.Entities.Forfatter;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.AttributeList;
 import java.util.ArrayList;
 
 @RestController
@@ -14,7 +15,11 @@ public class ForfatterController {
     @PostMapping("/forfattere")
     public Forfatter createForfatter(@RequestBody Forfatter forfatter){
         forfattere.add(forfatter);
-
+        forfatter.getBoeker().forEach(x -> {
+            if (!BokController.boeker.contains(x)){
+                BokController.boeker.add(x);
+            }
+        });
         return forfatter;
     }
 

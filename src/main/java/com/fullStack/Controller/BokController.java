@@ -5,10 +5,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
-@RestController
 public class BokController {
-
-    public  ArrayList<Bok> boeker = new ArrayList<Bok>();
+    static ArrayList<Bok> boeker = new ArrayList<>();
 
     @PostMapping("/boeker")
     public Bok createBok(@RequestBody Bok bok){
@@ -41,10 +39,6 @@ public class BokController {
         return false;
     }
 
-    @GetMapping("/boeker")
-    public ArrayList<Bok> alleBoeker() {
-        return boeker;
-    }
 
     /*public ArrayList<Bok> finnBokerAvForfatter(int ID) {
         ArrayList<Bok> bokerAvForfatter = new ArrayList<Bok>();
