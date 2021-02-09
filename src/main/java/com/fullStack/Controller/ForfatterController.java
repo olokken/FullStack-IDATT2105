@@ -5,11 +5,18 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.management.AttributeList;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RestController
 public class ForfatterController {
+<<<<<<< HEAD
 
     ArrayList<Forfatter> forfattere = new ArrayList<>();
+=======
+    static ArrayList<Forfatter> forfattere = new ArrayList<>();
+    Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+>>>>>>> 5331b422198992b221a343c7cb732bc38bd266a6
 
 
     @PostMapping("/forfattere")
@@ -51,9 +58,11 @@ public class ForfatterController {
     public Forfatter finnForfatterVedNavn(@PathVariable String navn) {
         for(int i = 0; i < forfattere.size(); i++) {
             if(forfattere.get(i).getNavn().equals(navn)){
+                log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
                 return forfattere.get(i);
             }
         }
+        log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
         return null;
     }
 
