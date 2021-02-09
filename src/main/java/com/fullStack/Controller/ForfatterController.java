@@ -1,15 +1,15 @@
 package com.fullStack.Controller;
 
-import com.fullStack.Entities.Bok;
 import com.fullStack.Entities.Forfatter;
 import org.springframework.web.bind.annotation.*;
-import com.fullStack.Controller.BokController;
 
 import java.util.ArrayList;
 
 @RestController
 public class ForfatterController {
+
     ArrayList<Forfatter> forfattere = new ArrayList<>();
+
 
     @PostMapping("/forfattere")
     public Forfatter createForfatter(@RequestBody Forfatter forfatter){
