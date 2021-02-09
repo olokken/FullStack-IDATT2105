@@ -8,7 +8,7 @@ public class Bok{
     private int ISBN;
     private int utgittAar;
 
-    public Bok(String navn, ArrayList<Forfatter> forfattere, int ISBN, int utgittAar) {
+    public Bok(String navn, int ISBN, int utgittAar) {
         this.navn = navn;
         this.ISBN = ISBN;
         this.utgittAar = utgittAar;
