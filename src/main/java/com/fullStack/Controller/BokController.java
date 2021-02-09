@@ -41,6 +41,16 @@ public class BokController {
     }
 
     public ArrayList<Bok> finnBokerAvForfatter(int ID) {
-        
+        ArrayList<Bok> bokerAvForfatter = new ArrayList<Bok>();
+       for(int i = 0; i < boeker.size(); i++) {
+           Bok current = boeker.get(i);
+           for(int j = 0; j < current.getForfattere().size(); j++) {
+               if(current.getForfattere().get(j).getID() == ID) {
+                   bokerAvForfatter.add(current);
+               }
+           }
+       }
+       return bokerAvForfatter;
     }
+
 }
