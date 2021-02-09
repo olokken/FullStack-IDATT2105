@@ -3,7 +3,6 @@ package com.fullStack.Entities;
 import java.util.ArrayList;
 
 public class Bok{
-
     private String navn;
     private int ISBN;
     private int utgittAar;
