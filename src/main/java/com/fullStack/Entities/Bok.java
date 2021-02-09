@@ -1,4 +1,4 @@
-package main.Entites;
+package com.fullStack.Entities;
 
 import java.util.ArrayList;
 

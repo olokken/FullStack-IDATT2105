@@ -1,4 +1,4 @@
-package main.Entites;
+package com.fullStack.Entities;
 
 class Adresse{
     private int postnr;
