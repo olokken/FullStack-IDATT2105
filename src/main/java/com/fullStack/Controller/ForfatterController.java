@@ -7,10 +7,13 @@ import com.fullStack.Controller.BokController;
 
 import javax.management.AttributeList;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @RestController
 public class ForfatterController {
-    ArrayList<Forfatter> forfattere = new ArrayList<>();
+    static ArrayList<Forfatter> forfattere = new ArrayList<>();
+    Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
     @PostMapping("/forfattere")
     public Forfatter createForfatter(@RequestBody Forfatter forfatter){
@@ -51,9 +54,11 @@ public class ForfatterController {
     public Forfatter finnForfatterVedNavn(@PathVariable String navn) {
         for(int i = 0; i < forfattere.size(); i++) {
             if(forfattere.get(i).getNavn().equals(navn)){
+                log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
                 return forfattere.get(i);
             }
         }
+        log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
         return null;
     }
 
