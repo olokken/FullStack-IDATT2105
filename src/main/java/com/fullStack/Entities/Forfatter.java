@@ -7,12 +7,14 @@ public class Forfatter{
     private String navn;
     private int foedselsAar;
     private Adresse adresse;
+    private ArrayList<Bok> boeker;
     private int ID;
 
-    public Forfatter(String navn, int foedselsAar, Adresse adresse, int ID) {
+    public Forfatter(String navn, int foedselsAar, Adresse adresse, ArrayList<Bok> boeker, int ID) {
         this.navn = navn;
         this.foedselsAar = foedselsAar;
         this.adresse = adresse;
+        this.boeker = boeker;
         this.ID = ID;
     }
 
@@ -30,6 +32,14 @@ public class Forfatter{
 
     public void setFoedselsAar(int foedselsAar) {
         this.foedselsAar = foedselsAar;
+    }
+
+    public ArrayList<Bok> getBoeker() {
+        return boeker;
+    }
+
+    public void setBoeker(ArrayList<Bok> boeker) {
+        this.boeker = boeker;
     }
 
     public Adresse getAdresse() {
