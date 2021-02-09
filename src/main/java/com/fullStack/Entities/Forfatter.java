@@ -6,14 +6,14 @@ public class Forfatter{
 
     private String navn;
     private int foedselsAar;
-    private ArrayList<Bok> boeker;
     private Adresse adresse;
+    private int ID;
 
-    public Forfatter(String navn, int foedselsAar, ArrayList<Bok> boeker, Adresse adresse) {
+    public Forfatter(String navn, int foedselsAar, Adresse adresse, int ID) {
         this.navn = navn;
         this.foedselsAar = foedselsAar;
-        this.boeker = boeker;
         this.adresse = adresse;
+        this.ID = ID;
     }
 
     public String getNavn() {
@@ -32,19 +32,15 @@ public class Forfatter{
         this.foedselsAar = foedselsAar;
     }
 
-    public ArrayList<Bok> getBoeker() {
-        return boeker;
-    }
-
-    public void setBoeker(ArrayList<Bok> boeker) {
-        this.boeker = boeker;
-    }
-
     public Adresse getAdresse() {
         return adresse;
     }
 
+    public int getID() {return this.ID;}
+
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
+
+    public void setID(int ID) { this.ID = ID;}
 }

@@ -6,10 +6,10 @@ public class Bok{
 
     private String navn;
     private ArrayList<Forfatter> forfattere;
-    private String ISBN;
+    private int ISBN;
     private int utgittAar;
 
-    public Bok(String navn, ArrayList<Forfatter> forfattere, String ISBN, int utgittAar) {
+    public Bok(String navn, ArrayList<Forfatter> forfattere, int ISBN, int utgittAar) {
         this.navn = navn;
         this.forfattere = forfattere;
         this.ISBN = ISBN;
@@ -24,7 +24,7 @@ public class Bok{
         return forfattere;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 
@@ -40,7 +40,7 @@ public class Bok{
         this.forfattere = forfattere;
     }
 
-    public void setISBN(String ISBN) {
+    public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
 
