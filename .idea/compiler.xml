@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="FullStack-IDATT2105" />
+        <module name="Fullstack" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FullStack-IDATT2105" target="1.5" />
+      <module name="Fullstack" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
