@@ -13,6 +13,12 @@ public class Bok{
         this.utgittAar = utgittAar;
     }
 
+    public Bok(Bok bok) {
+        this.navn = bok.getNavn();
+        this.ISBN = bok.getISBN();
+        this.utgittAar = bok.getUtgittAar();
+    }
+
     public String getNavn() {
         return navn;
     }

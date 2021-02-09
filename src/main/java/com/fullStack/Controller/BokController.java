@@ -26,14 +26,30 @@ public class BokController {
             Bok current = boeker.get(i);
             if (current.getISBN() == ISBN) {
                 boeker.set(i, nyBokInfo);
-                return nyBokInfo;
+                break;
             }
         }
-        return null;
+        for(Forfatter f: ForfatterController.forfattere){
+            for (Bok b : f.getBoeker()) {
+                if(b.getISBN() == ISBN) {
+                    f.getBoeker().remove(b);
+                    f.getBoeker().add(nyBokInfo);
+                }
+            }
+        }
+        return nyBokInfo;
     }
 
     @DeleteMapping("/boeker/{ISBN}")
     public boolean deleteBok(@PathVariable int ISBN) {
+        for(Forfatter f: ForfatterController.forfattere){
+            for (Bok b : f.getBoeker()) {
+                if(b.getISBN() == ISBN) {
+                    f.getBoeker().remove(b);
+                    break;
+                }
+            }
+        }
         for(int i = 0; i < boeker.size(); i++) {
             Bok current = boeker.get(i);
             if (current.getISBN() == ISBN) {
