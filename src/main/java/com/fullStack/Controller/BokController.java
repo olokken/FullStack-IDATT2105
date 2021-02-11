@@ -79,14 +79,14 @@ public class BokController {
         for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getNavn().equals(navn)){
                 logger.info("Klienten søkte etter " + navn + " og søket gav resultater");
-                return boeker.get(i);
+                return this.service.lagBok(boeker.get(i));
             }
         }
         logger.info("Klienten søkte etter " + navn + " og søket gav ingen resultater");
         return null;
     }
 
-    @RequestMapping("/boeker/{navn}")
+    /*@RequestMapping("/boeker/{navn}")
     public Bok message() {
         logger.trace("En Trace");
         logger.debug("En Debug");
@@ -94,5 +94,5 @@ public class BokController {
         logger.warn("En advarsel");
         logger.error("En error");
         return this.service.melding();
-    }
+    }*/
 }

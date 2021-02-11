@@ -16,7 +16,7 @@ public class BokService {
     @Autowired
     private BokRepo repo;
 
-    public Bok melding(){
-        return this.repo.saySomething();
+    public Bok lagBok(Bok bok){
+        return this.repo.nyBok(bok);
     }
 }

@@ -11,4 +11,8 @@ public class BokRepo {
     public Bok saySomething() {
         return new Bok();
     }
+
+    public Bok nyBok(Bok bok) {
+        return bok;
+    }
 }
