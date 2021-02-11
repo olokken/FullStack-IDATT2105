@@ -1,6 +1,8 @@
 package com.fullStack.Controller;
 
 import com.fullStack.Entities.Forfatter;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,6 +11,8 @@ import java.util.ArrayList;
 public class ForfatterController {
 
     static ArrayList<Forfatter> forfattere = new ArrayList<>();
+
+    Logger logger = LoggerFactory.getLogger(ForfatterController.class);
 
 
     @PostMapping("/forfattere")
@@ -50,14 +54,17 @@ public class ForfatterController {
     public Forfatter finnForfatterVedNavn(@PathVariable String navn) {
         for(int i = 0; i < forfattere.size(); i++) {
             if(forfattere.get(i).getNavn().equals(navn)){
+                logger.info("Klienten søkte på forfatter ved navn: " + navn + " og søket gav resultat");
                 return forfattere.get(i);
             }
         }
+        logger.info("Klienten søkte på forfatter ved navn: " + navn + " og søket gav ingen resultat");
         return null;
     }
 
     @GetMapping("/forfattere")
     public ArrayList<Forfatter> alleForfattere() {
+        logger.info("Klienten søkte på en liste over alle forfatterne");
         return forfattere;
     }
 }

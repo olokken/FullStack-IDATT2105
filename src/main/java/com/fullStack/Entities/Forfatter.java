@@ -18,6 +18,8 @@ public class Forfatter{
         this.ID = ID;
     }
 
+    public Forfatter(){}
+
     public String getNavn() {
         return navn;
     }

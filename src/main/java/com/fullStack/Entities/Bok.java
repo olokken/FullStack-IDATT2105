@@ -1,7 +1,5 @@
 package com.fullStack.Entities;
 
-import java.util.ArrayList;
-
 public class Bok{
     private String navn;
     private int ISBN;
@@ -18,6 +16,8 @@ public class Bok{
         this.ISBN = bok.getISBN();
         this.utgittAar = bok.getUtgittAar();
     }
+
+    public Bok(){}
 
     public String getNavn() {
         return navn;

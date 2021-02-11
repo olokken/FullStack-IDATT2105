@@ -2,17 +2,24 @@ package com.fullStack.Controller;
 
 import com.fullStack.Entities.Bok;
 import com.fullStack.Entities.Forfatter;
+import com.fullStack.Services.BokService;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 @RestController
 public class BokController {
+
     static ArrayList<Bok> boeker = new ArrayList<>();
-    Logger log = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+
+    Logger logger = LoggerFactory.getLogger(BokController.class);
+
+    @Autowired
+    private BokService service ;
 
     @PostMapping("/boeker")
     public Bok createBok(@RequestBody Bok bok) {
@@ -62,6 +69,7 @@ public class BokController {
 
     @GetMapping("/boeker")
     public ArrayList<Bok> getBoeker() {
+        logger.info("Klienten søkte etter alle bøkene");
         return boeker;
     }
 
@@ -70,13 +78,21 @@ public class BokController {
     public Bok finnBokVedNavn(@PathVariable String navn) {
         for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getNavn().equals(navn)){
-                log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
+                logger.info("Klienten søkte etter " + navn + " og søket gav resultater");
                 return boeker.get(i);
             }
         }
-        log.log(Level.ALL, "Klienten søkte etter " + navn + " og søket gav resultater");
+        logger.info("Klienten søkte etter " + navn + " og søket gav ingen resultater");
         return null;
     }
 
-
+    @RequestMapping("/boeker/{navn}")
+    public Bok message() {
+        logger.trace("En Trace");
+        logger.debug("En Debug");
+        logger.info("En info");
+        logger.warn("En advarsel");
+        logger.error("En error");
+        return this.service.melding();
+    }
 }
