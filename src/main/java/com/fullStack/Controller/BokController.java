@@ -19,7 +19,7 @@ public class BokController {
     private BokService service;
 
     @PostMapping("/boeker")
-    public Bok createBok(@RequestBody Bok bok) {
+    public int createBok(@RequestBody Bok bok) {
         return service.createBok(bok);
     }
 
@@ -45,14 +45,4 @@ public class BokController {
         logger.info("Klienten søkte etter " + navn);
         return service.finnBokVedNavn(navn);
     }
-
-    /*@RequestMapping("/boeker/{navn}")
-    public Bok message() {
-        logger.trace("En Trace");
-        logger.debug("En Debug");
-        logger.info("En info");
-        logger.warn("En advarsel");
-        logger.error("En error");
-        return this.service.melding();
-    }*/
 }

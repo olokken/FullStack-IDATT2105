@@ -3,8 +3,9 @@ package com.fullStack.Service;
 
 import com.fullStack.Entities.Bok;
 import com.fullStack.Entities.Forfatter;
+import com.fullStack.Repository.BokRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -13,9 +14,12 @@ import java.util.ArrayList;
 public class BokService {
     static ArrayList<Bok> boeker = new ArrayList<>();
 
-    public Bok createBok(Bok bok) {
+    @Autowired
+    BokRepo repo;
+
+    public int createBok(Bok bok) {
         boeker.add(bok);
-        return bok;
+        return repo.createBok(bok);
     }
 
     public Bok changeBok(Bok nyBokInfo,int ISBN) {
@@ -57,11 +61,10 @@ public class BokService {
     }
 
     public ArrayList<Bok> getBoeker() {
-        return boeker;
+        return repo.getBoeker();
     }
 
 
-    @GetMapping("/boeker/{navn}")
     public Bok finnBokVedNavn(String navn) {
         for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getNavn().equals(navn)){

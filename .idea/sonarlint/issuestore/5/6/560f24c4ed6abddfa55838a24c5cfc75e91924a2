@@ -1,0 +1,10 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±©àŸ
+r	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áí“êÿÿÿÿÿ8Ô¸‘‰ù.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îžïûûÿÿÿÿ8ø÷ÿºø.
+c
+java:S3457-"AFormat specifiers should be used instead of string concatenation.(€ªä‘üÿÿÿÿ8•Ÿ…¯ù.
+Y
+java:S2629-"7Use the built-in formatting to construct this argument.(€ªä‘üÿÿÿÿ8•Ÿ…¯ù.
+’
+java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ8ø÷ÿºø.
