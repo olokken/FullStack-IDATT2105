@@ -17,7 +17,7 @@ public class SpringJdbcConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://mysql.stud.ntnu.no:3306/haavarty_datab?useSSL=false");
         dataSource.setUsername("haavarty_user1");
-        dataSource.setPassword("tussi28");
+        dataSource.setPassword("chFk0Ja");
 
         return dataSource;
     }
