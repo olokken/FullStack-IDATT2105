@@ -1,0 +1,17 @@
+Index: src/main/java/com/fullStack/Service/BokService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.fullStack.Service;\n\n\nimport com.fullStack.Entities.Bok;\nimport com.fullStack.Entities.Forfatter;\nimport org.springframework.stereotype.Service;\nimport org.springframework.web.bind.annotation.*;\n\nimport java.util.ArrayList;\n\n\n@Service\npublic class BokService {\n    static ArrayList<Bok> boeker = new ArrayList<>();\n\n    public Bok createBok(Bok bok) {\n        boeker.add(bok);\n        return bok;\n    }\n\n    public Bok changeBok(Bok nyBokInfo,int ISBN) {\n        for(int i = 0; i < boeker.size(); i++) {\n            Bok current = boeker.get(i);\n            if (current.getISBN() == ISBN) {\n                boeker.set(i, nyBokInfo);\n                break;\n            }\n        }\n        for(Forfatter f: ForfatterService.forfattere){\n            for (Bok b : f.getBoeker()) {\n                if(b.getISBN() == ISBN) {\n                    f.getBoeker().remove(b);\n                    f.getBoeker().add(nyBokInfo);\n                }\n            }\n        }\n        return nyBokInfo;\n    }\n\n    public boolean deleteBok(int ISBN) {\n        for(Forfatter f: ForfatterService.forfattere){\n            for (Bok b : f.getBoeker()) {\n                if(b.getISBN() == ISBN) {\n                    f.getBoeker().remove(b);\n                    break;\n                }\n            }\n        }\n        for(int i = 0; i < boeker.size(); i++) {\n            Bok current = boeker.get(i);\n            if (current.getISBN() == ISBN) {\n                boeker.remove(i);\n                return true;\n            }\n        }\n        return false;\n    }\n\n    public ArrayList<Bok> getBoeker() {\n        return boeker;\n    }\n\n\n    @GetMapping(\"/boeker/{navn}\")\n    public Bok finnBokVedNavn(String navn) {\n        for(int i = 0; i < boeker.size(); i++) {\n            if(boeker.get(i).getNavn().equals(navn)){\n                return boeker.get(i);\n            }\n        }\n        return null;\n    }\n\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/fullStack/Service/BokService.java	(revision f33913b59a01e3d9003ec73924a9cf31002403d6)
++++ src/main/java/com/fullStack/Service/BokService.java	(date 1613127619414)
+@@ -61,7 +61,6 @@
+     }
+ 
+ 
+-    @GetMapping("/boeker/{navn}")
+     public Bok finnBokVedNavn(String navn) {
+         for(int i = 0; i < boeker.size(); i++) {
+             if(boeker.get(i).getNavn().equals(navn)){
