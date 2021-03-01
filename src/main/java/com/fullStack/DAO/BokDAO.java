@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -61,4 +62,15 @@ public class BokDAO {
         return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :ISBN", namedParameters, Bok.class);
     }
 
+
+    public boolean deleteBok(int ISBN) {
+        String query = "DELETE FROM Bok WHERE ISBN = " + ISBN;
+        jdbcTemplate.execute(query);
+        return true;
+    }
+
+    public Bok tomBok() {
+        Bok bok = new Bok();
+        return bok;
+    }
 }

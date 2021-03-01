@@ -54,7 +54,7 @@ public class BokService {
             Bok current = boeker.get(i);
             if (current.getISBN() == ISBN) {
                 boeker.remove(i);
-                return true;
+                return repo.deleteBok(current.getISBN());
             }
         }
         return false;
