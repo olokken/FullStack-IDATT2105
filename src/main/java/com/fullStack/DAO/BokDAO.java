@@ -48,12 +48,7 @@ public class BokDAO {
     }
 
     public int changeBok(Bok nyInfo, int ISBN) {
-        final Map<String, Object> parameters = new HashMap<String, Object>();
-        parameters.put("navn", nyInfo.getNavn());
-        parameters.put("ISBN", nyInfo.getISBN());
-        parameters.put("utgitt_aar", nyInfo.getUtgittAar());
-
-        return simpleJdbcInsert.execute(parameters);
+        return jdbcTemplate.update("UPDATE Bok SET ISBN = ?, navn = ?, utgitt_aar = ? WHERE ISBN = 2", nyInfo.getISBN(), nyInfo.getNavn(), nyInfo.getUtgittAar());
     }
 
 

@@ -14,9 +14,9 @@ public class ForfatterService {
     public Forfatter createForfatter(Forfatter forfatter){
         forfattere.add(forfatter);
         forfatter.getBoeker().forEach(x -> {
-            if (!BokService.boeker.contains(x)){
+            /*if (!BokService.boeker.contains(x)){
                 BokService.boeker.add(x);
-            }
+            }*/
         });
         return forfatter;
     }
