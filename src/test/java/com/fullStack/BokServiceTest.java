@@ -13,7 +13,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.fail;
@@ -48,8 +47,8 @@ public class BokServiceTest {
   }
 
   @Test
-  void lesson4Message() {
-    ArrayList<Bok> boeker = service.getBoeker();
+  void getBoeker() {
+    ArrayList<Bok> boeker = service.getBoekerTest();
 
     assertThat(boeker.get(0).getNavn()).isEqualTo("Mummi");
     assertThat(boeker.get(0).getISBN()).isEqualTo(5566);

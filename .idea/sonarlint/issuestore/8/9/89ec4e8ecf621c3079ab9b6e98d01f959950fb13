@@ -1,2 +1,17 @@
 
 v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰±ζΜ8 Τλώ.
+m	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ό µ8Ο‡νώ.
+H
+java:S1602'",Remove useless curly braces around statement(¥±Ψl8Ο‡νώ.
+
+java:S1450"]Remove the "simpleJdbcCall" field and declare it as a local variable in the relevant methods.(ΰ§σθϋÿÿÿÿ8Ο‡νώ.
+|
+java:S1450"_Remove the "simpleJdbcInsert" field and declare it as a local variable in the relevant methods.(ώ•΄8Ο‡νώ.
+Z
+java:S1068">Remove this unused "namedParameterJdbcTemplate" private field.(–ª”k8Ο‡νώ.
+…
+java:S1450"iRemove the "namedParameterJdbcTemplate" field and declare it as a local variable in the relevant methods.(–ª”k8Ο‡νώ.
+T
+java:S1068"2Remove this unused "simpleJdbcCall" private field.(ΰ§σθϋÿÿÿÿ8Ο‡νώ.
+Q
+java:S1068"4Remove this unused "simpleJdbcInsert" private field.(ώ•΄8Ο‡νώ.

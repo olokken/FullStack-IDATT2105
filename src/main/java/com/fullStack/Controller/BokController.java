@@ -19,8 +19,8 @@ public class BokController {
     private BokService service;
 
     @PostMapping("/boeker")
-    public int createBok(@RequestBody Bok bok) {
-        return service.createBok(bok);
+    public void createBok(@RequestBody Bok bok) {
+        service.createBok(bok);
     }
 
     @PutMapping("/boeker/{ISBN}")
@@ -39,14 +39,14 @@ public class BokController {
         return service.getBoeker();
     }
 
-    @GetMapping("/boeker/{navn}")
+    @GetMapping("/boeker/navn/{navn}")
     public Bok finnBokVedNavn(@PathVariable String navn) {
         logger.info("Klienten søkte etter " + navn);
         return service.finnBokVedNavn(navn);
     }
 
-    @GetMapping("/boeker/{ISBN}")
-    public Bok getBok(@RequestParam int ISBN) {
+    @GetMapping("/boeker/isbn/{ISBN}")
+    public Bok getBok(@PathVariable int ISBN) {
         logger.info("Klienten søkte etter bok med ISBN: " + ISBN);
         return service.getBok(ISBN);
     }

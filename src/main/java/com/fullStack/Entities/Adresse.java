@@ -4,11 +4,13 @@ public class Adresse{
     private int postnr;
     private String by;
     private String gate;
+    private int ID;
 
-    public Adresse(int postnr, String by, String gate) {
+    public Adresse(int postnr, String by, String gate, int ID) {
         this.postnr = postnr;
         this.by = by;
         this.gate = gate;
+        this.ID = ID;
     }
 
     public Adresse(){}
@@ -35,5 +37,12 @@ public class Adresse{
 
     public void setGate(String gate) {
         this.gate = gate;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+    private int getID() {
+        return this.getID();
     }
 }
