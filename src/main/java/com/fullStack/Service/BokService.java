@@ -12,53 +12,40 @@ import java.util.ArrayList;
 
 @Service
 public class BokService {
-    static ArrayList<Bok> boeker = new ArrayList<>();
 
     @Autowired
     BokDAO repo;
 
+    //static ArrayList<Bok> boeker = new ArrayList<>();
+
+
     public int createBok(Bok bok) {
-        boeker.add(bok);
+        //boeker.add(bok);
         return repo.createBok(bok);
     }
 
     public int changeBok(Bok nyBokInfo,int ISBN) {
-        for(int i = 0; i < boeker.size(); i++) {
+        /*for(int i = 0; i < boeker.size(); i++) {
             Bok current = boeker.get(i);
-            System.out.println(current.getNavn());
             if (current.getISBN() == ISBN) {
-                //boeker.set(i, nyBokInfo);
+                boeker.set(i, nyBokInfo);
                 return repo.changeBok(nyBokInfo, ISBN);
             }
         }
-        for(Forfatter f: ForfatterService.forfattere){
-            for (Bok b : f.getBoeker()) {
-                if(b.getISBN() == ISBN) {
-                    f.getBoeker().remove(b);
-                    f.getBoeker().add(nyBokInfo);
-                }
-            }
-        }
-        return 0;
+        return 0;*/
+        return repo.changeBok(nyBokInfo, ISBN);
     }
 
     public boolean deleteBok(int ISBN) {
-        for(Forfatter f: ForfatterService.forfattere){
-            for (Bok b : f.getBoeker()) {
-                if(b.getISBN() == ISBN) {
-                    f.getBoeker().remove(b);
-                    break;
-                }
-            }
-        }
-        for(int i = 0; i < boeker.size(); i++) {
+        /*for(int i = 0; i < boeker.size(); i++) {
             Bok current = boeker.get(i);
             if (current.getISBN() == ISBN) {
                 boeker.remove(i);
                 return repo.deleteBok(current.getISBN());
             }
         }
-        return false;
+        return false;*/
+        return repo.deleteBok(ISBN);
     }
 
     public ArrayList<Bok> getBoeker() {
@@ -67,22 +54,24 @@ public class BokService {
 
 
     public Bok finnBokVedNavn(String navn) {
-        for(int i = 0; i < boeker.size(); i++) {
+        /*for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getNavn().equals(navn)){
                 return boeker.get(i);
             }
         }
-        return null;
+        return null;*/
+        return new Bok();
     }
 
     public Bok getBok(int ISBN) {
+        /*
         for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getISBN() == ISBN) {
                 return repo.getBok(boeker.get(i).getISBN());
             }
         }
-        return null;
+        return null;*/
+        return repo.getBok(ISBN);
     }
-
 
 }
