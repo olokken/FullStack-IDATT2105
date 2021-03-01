@@ -13,11 +13,10 @@ public class ForfatterRowMapper implements RowMapper<Forfatter> {
     public Forfatter mapRow(final ResultSet rs, final int rowNum) throws SQLException {
         final Forfatter forfatter = new Forfatter();
 
-        forfatter.set
-        bok.setNavn(rs.getString("navn"));
-        bok.setUtgittAar(rs.getInt("utgittAar"));
-
-        return bok;
+        forfatter.setNavn(rs.getString("navn"));
+        forfatter.setID(rs.getInt("id"));
+        forfatter.setFoedselsAar(rs.getInt("foedselsAar"));
+        return forfatter;
 
     }
 }
