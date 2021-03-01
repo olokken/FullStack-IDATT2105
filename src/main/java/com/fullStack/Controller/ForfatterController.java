@@ -34,10 +34,16 @@ public class ForfatterController {
         return service.deleteForfatter(ID);
     }
 
-    @GetMapping("/forfattere/{navn}")
+    @GetMapping("/forfattere/navn/{navn}")
     public Forfatter finnForfatterVedNavn(@PathVariable String navn) {
         logger.info("Klienten søkte etter forfatteren " + navn);
         return service.finnForfatterVedNavn(navn);
+    }
+
+    @GetMapping("/forfattere/id/{ID}")
+    public Forfatter getForfatter(@PathVariable int ID) {
+        logger.info("Klienten søkte etter forfatteren med ID " + ID);
+        return service.getForfatter(ID);
     }
 
     @GetMapping("/forfattere")

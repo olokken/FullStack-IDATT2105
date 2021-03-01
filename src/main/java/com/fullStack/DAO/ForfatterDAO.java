@@ -34,7 +34,7 @@ public class ForfatterDAO {
         simpleJdbcCall = new SimpleJdbcCall(dataSource).withProcedureName("READ_Bok");
     }
 
-    ArrayList<Forfatter> getForfattere() {
+    public ArrayList<Forfatter> getForfattere() {
         ArrayList<Forfatter> forfattere = (ArrayList<Forfatter>) jdbcTemplate.query("SELECT * FROM Forfatter f join Adresse a on f.adresse_id = a.adresse_id", new ForfatterRowMapper());
         forfattere.forEach(x -> {
             x.setBoeker(getBoeker(x.getID()));
@@ -45,5 +45,25 @@ public class ForfatterDAO {
     ArrayList<Bok> getBoeker(int forfatter_id) {
         String query = "Select * from Bok b join BokForfatter bf on b.ISBN = bf.ISBN where bf.forfatter_id = " + forfatter_id;
         return (ArrayList<Bok>)jdbcTemplate.query(query, new BokRowMapper());
+    }
+
+    public Forfatter finnForfatterVedNavn(String navn) {
+        String query = "SELECT * FROM Forfatter f JOIN Adresse a ON f.adresse_id = a.adresse_id WHERE navn = ?";
+        Forfatter forfatter = jdbcTemplate.queryForObject(query, new ForfatterRowMapper(), navn);
+        forfatter.setBoeker(getBoeker(forfatter.getID()));
+        return forfatter;
+    }
+
+    public boolean deleteForfatter(int ID) {
+        String query = "DELETE FROM Forfatter WHERE forfatter_id = " + ID;
+        jdbcTemplate.execute(query);
+        return true;
+    }
+
+    public Forfatter getForfatter(int ID) {
+        String query = "SELECT * FROM Forfatter f JOIN Adresse a ON f.adresse_id = a.adresse_id WHERE forfatter_id = ?";
+        Forfatter forfatter = jdbcTemplate.queryForObject(query, new ForfatterRowMapper(), ID);
+        forfatter.setBoeker(getBoeker(forfatter.getID()));
+        return forfatter;
     }
 }
