@@ -1,6 +1,6 @@
 package com.fullStack.Entities;
 
-class Adresse{
+public class Adresse{
     private int postnr;
     private String by;
     private String gate;
@@ -10,6 +10,8 @@ class Adresse{
         this.by = by;
         this.gate = gate;
     }
+
+    public Adresse(){}
 
     public int getPostnr() {
         return postnr;

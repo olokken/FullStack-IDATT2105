@@ -43,22 +43,22 @@ public class BokDAO {
 
 
     public int createBok(Bok bok) {
-        return jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getNavn(), bok.getISBN(), bok.getUtgittAar());
+        return jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getISBN(), bok.getNavn(), bok.getUtgittAar());
     }
 
     public int changeBok(Bok nyInfo, int ISBN) {
         final Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("navn", nyInfo.getNavn());
         parameters.put("ISBN", nyInfo.getISBN());
-        parameters.put("utgittAar", nyInfo.getUtgittAar());
+        parameters.put("utgitt_aar", nyInfo.getUtgittAar());
 
         return simpleJdbcInsert.execute(parameters);
     }
 
 
     public Bok getBok(int ISBN) {
-        final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("isbn", ISBN);
-        return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :isbn", namedParameters, Bok.class);
+        final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("ISBN", ISBN);
+        return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :ISBN", namedParameters, Bok.class);
     }
 
 }
