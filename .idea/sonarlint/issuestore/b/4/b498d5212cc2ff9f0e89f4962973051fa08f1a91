@@ -1,6 +1,7 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖËÊêùÿÿÿÿ
-k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ê×—ÿÿÿÿÿ
 ‹
 java:S1319?"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ
+m	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÞùÈÓ8›ë¡éþ.
 k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–“Ý“üÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ê×—ÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖËÊêùÿÿÿÿ

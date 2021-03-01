@@ -1,0 +1,14 @@
+
+m	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞùÈÓ8ã½—éş.
+M
+java:S11721"+Remove this unused method parameter "ISBN".(ËÔ¹üÿÿÿÿ8ÖŞéş.
+’
+java:S1319("pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ8ú¹èğü.
+{
+java:S22932"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ş”‡ıÿÿÿÿ8ÖŞéş.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰±æÌ
+r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÔ¹üÿÿÿÿ8•ç‡éş.
+T
+java:S1068"2Remove this unused "simpleJdbcCall" private field.(à§óèûÿÿÿÿ8Ìì¼ğü.
+
+java:S1450"]Remove the "simpleJdbcCall" field and declare it as a local variable in the relevant methods.(à§óèûÿÿÿÿ8¯ºÏğü.
