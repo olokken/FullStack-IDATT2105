@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 @ComponentScan("com.fullStack")
 public class SpringJdbcConfig {
     @Bean
-    public DataSource mysqlDataSource() {
+    static public DataSource mysqlDataSource() {
         final DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://mysql-ait.stud.idi.ntnu.no/olelok?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");

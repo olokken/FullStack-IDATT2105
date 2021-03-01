@@ -21,7 +21,7 @@ public class ForfatterRowMapper implements RowMapper<Forfatter> {
         adresse.setGate(rs.getString("gate"));
         adresse.setPostnr(rs.getInt("postnr"));
         forfatter.setAdresse(adresse);
-        return forfatter; 
+        return forfatter;
 
     }
 }
