@@ -37,9 +37,13 @@ public class ForfatterDAO {
     }
 
     public Forfatter createForfatter(Forfatter forfatter) {
+        //Først legger til adressen i adressetabellen.
         jdbcTemplate.update("INSERT INTO Adresse (default , ?, ?, ?)",  forfatter.getAdresse().getPostnr(), forfatter.getAdresse().getBy(), forfatter.getAdresse().getGate());
+        //Deretter legger til forfatteren i forfatterentabellen der jeg bruker methoden(se nedenfor) getAdresseId() som skal returnere id'en til adressen fordi den blir automatisk laget i databsen. (AI)
         jdbcTemplate.update("INSERT INTO Forfatter VALUES (default, ?,  ?, ?)", forfatter.getFoedselsAar(), forfatter.getNavn(), getAdresseId(forfatter.getAdresse()));
+        //Skal deretter legge til alle bøkene som kommer med når vi legger til en forfatter. Trenger først forfatterID'en på samme måte som gjort over.
         int forfatterID = getForfatterId(forfatter);
+        //Streamer gjennom listen med bøker, og legger først til boka, og deretter en record i koplingstabellen.
         forfatter.getBoeker().forEach(x -> {
             jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", x.getISBN(), x.getNavn(), x.getUtgittAar());
             jdbcTemplate.update("Insert INTO BokForfatter Values (default, ?, ?)", x.getISBN(), forfatterID);
