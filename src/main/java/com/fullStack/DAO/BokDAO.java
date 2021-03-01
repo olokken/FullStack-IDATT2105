@@ -35,7 +35,6 @@ public class BokDAO {
         namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         simpleJdbcInsert = new SimpleJdbcInsert(dataSource).withTableName("Bok");
         simpleJdbcCall = new SimpleJdbcCall(dataSource).withProcedureName("READ_Bok");
-
     }
 
     public ArrayList<Bok> getBoeker() {
