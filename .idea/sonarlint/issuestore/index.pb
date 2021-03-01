@@ -31,3 +31,7 @@ e
 5src/test/java/com/fullStack/DemoApplicationTests.java,5/a/5a06ae8d7e9f6b4c36f649a3698ddf2d9b9cf343
 g
 7src/main/java/com/fullStack/DAO/ForfatterRowMapper.java,5/9/5963c6a2e027e8ce0734a7a18185b04ff45cff03
+_
+/src/test/java/com/fullStack/BokServiceTest.java,f/3/f3347fdf630d73f135f4c4e29bd7f7434fa92a89
+b
+2src/test/java/com/fullStack/BokControllerTest.java,f/3/f3219258f5b41a617250388bd99fd507e3fa2505

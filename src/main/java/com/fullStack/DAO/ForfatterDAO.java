@@ -43,6 +43,7 @@ public class ForfatterDAO {
     }
 
     ArrayList<Bok> getBoeker(int forfatter_id) {
-        return (ArrayList<Bok>)jdbcTemplate.query("Select * from Bok b join BokForfatter bf on b.ISBN = bf.ISBN where bf.forfatter_id = forfatter_id", new BokRowMapper());
+        String query = "Select * from Bok b join BokForfatter bf on b.ISBN = bf.ISBN where bf.forfatter_id = " + forfatter_id;
+        return (ArrayList<Bok>)jdbcTemplate.query(query, new BokRowMapper());
     }
 }

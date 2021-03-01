@@ -11,10 +11,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.PreparedStatement;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 @Repository
 public class BokDAO {
@@ -43,20 +41,20 @@ public class BokDAO {
     }
 
 
-    public int createBok(Bok bok) {
-        return jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getISBN(), bok.getNavn(), bok.getUtgittAar());
+    public void createBok(Bok bok) {
+         jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getISBN(), bok.getNavn(), bok.getUtgittAar());
     }
 
     public int changeBok(Bok nyInfo, int ISBN) {
-        return jdbcTemplate.update("UPDATE Bok SET ISBN = ?, navn = ?, utgitt_aar = ? WHERE ISBN = 2", nyInfo.getISBN(), nyInfo.getNavn(), nyInfo.getUtgittAar());
+        return jdbcTemplate.update("UPDATE Bok SET ISBN = ?, navn = ?, utgitt_aar = ? WHERE ISBN = " + ISBN, nyInfo.getISBN(), nyInfo.getNavn(), nyInfo.getUtgittAar());
     }
 
 
     public Bok getBok(int ISBN) {
-        final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("ISBN", ISBN);
-        return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :ISBN", namedParameters, Bok.class);
+        String query = "SELECT * FROM Bok WHERE ISBN = ?";
+        Bok bok = jdbcTemplate.queryForObject(query, new BokRowMapper(), ISBN);
+        return bok;
     }
-
 
     public boolean deleteBok(int ISBN) {
         String query = "DELETE FROM Bok WHERE ISBN = " + ISBN;
@@ -64,8 +62,14 @@ public class BokDAO {
         return true;
     }
 
-    public Bok tomBok() {
-        Bok bok = new Bok();
+    public Bok finnBokVedNavn(String navn) {
+        String query = "SELECT * FROM Bok WHERE navn = ?";
+        Bok bok = jdbcTemplate.queryForObject(query, new BokRowMapper(), navn);
         return bok;
     }
+
+    public Bok tomBok() {
+        return new Bok();
+    }
+
 }
