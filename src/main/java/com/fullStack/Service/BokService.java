@@ -3,7 +3,7 @@ package com.fullStack.Service;
 
 import com.fullStack.Entities.Bok;
 import com.fullStack.Entities.Forfatter;
-import com.fullStack.Repository.BokRepo;
+import com.fullStack.DAO.BokDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class BokService {
     static ArrayList<Bok> boeker = new ArrayList<>();
 
     @Autowired
-    BokRepo repo;
+    BokDAO repo;
 
     public int createBok(Bok bok) {
         boeker.add(bok);
@@ -69,6 +69,15 @@ public class BokService {
         for(int i = 0; i < boeker.size(); i++) {
             if(boeker.get(i).getNavn().equals(navn)){
                 return boeker.get(i);
+            }
+        }
+        return null;
+    }
+
+    public Bok getBok(int ISBN) {
+        for(int i = 0; i < boeker.size(); i++) {
+            if(boeker.get(i).getISBN() == ISBN) {
+                return repo.getBok(boeker.get(i).getISBN());
             }
         }
         return null;

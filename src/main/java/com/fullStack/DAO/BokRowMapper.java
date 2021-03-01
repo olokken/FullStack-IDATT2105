@@ -1,4 +1,4 @@
-package com.fullStack.Repository;
+package com.fullStack.DAO;
 
 import com.fullStack.Entities.Bok;
 import org.springframework.jdbc.core.RowMapper;

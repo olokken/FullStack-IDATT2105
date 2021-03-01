@@ -1,4 +1,4 @@
-package com.fullStack.Repository;
+package com.fullStack.DAO;
 
 import java.sql.SQLException;
 

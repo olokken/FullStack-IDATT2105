@@ -1,4 +1,4 @@
-package com.fullStack.Repository;
+package com.fullStack.DAO;
 
 
 import org.springframework.context.annotation.Bean;

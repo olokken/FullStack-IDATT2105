@@ -1,6 +1,6 @@
 package com.fullStack.Entities;
 
-public class Bok{
+public class  Bok{
     private String navn;
     private int ISBN;
     private int utgittAar;

@@ -39,10 +39,15 @@ public class BokController {
         return service.getBoeker();
     }
 
-
     @GetMapping("/boeker/{navn}")
     public Bok finnBokVedNavn(@PathVariable String navn) {
         logger.info("Klienten søkte etter " + navn);
         return service.finnBokVedNavn(navn);
+    }
+
+    @GetMapping("/boeker/{ISBN}")
+    public Bok getBok(@RequestParam int ISBN) {
+        logger.info("Klienten søkte etter bok med ISBN: " + ISBN);
+        return service.getBok(ISBN);
     }
 }

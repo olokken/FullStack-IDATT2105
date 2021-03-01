@@ -1,7 +1,8 @@
-package com.fullStack.Repository;
+package com.fullStack.DAO;
 
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ForfatterRepo {
+public class ForfatterDAO {
+
 }
