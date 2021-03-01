@@ -51,15 +51,15 @@ public class BokDAO {
         final Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("navn", nyInfo.getNavn());
         parameters.put("ISBN", nyInfo.getISBN());
-        parameters.put("utgittAar", nyInfo.getUtgittAar());
+        parameters.put("utgitt_aar", nyInfo.getUtgittAar());
 
         return simpleJdbcInsert.execute(parameters);
     }
 
 
     public Bok getBok(int ISBN) {
-        final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("isbn", ISBN);
-        return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :isbn", namedParameters, Bok.class);
+        final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("ISBN", ISBN);
+        return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :ISBN", namedParameters, Bok.class);
     }
 
     public boolean deleteBok(int ISBN) {
