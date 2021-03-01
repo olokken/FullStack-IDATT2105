@@ -24,7 +24,7 @@ public class BokController {
     }
 
     @PutMapping("/boeker/{ISBN}")
-    public Bok changeBok(@RequestBody Bok nyBokInfo, @PathVariable int ISBN) {
+    public int changeBok(@RequestBody Bok nyBokInfo, @PathVariable int ISBN) {
             return service.changeBok(nyBokInfo, ISBN);
     }
 

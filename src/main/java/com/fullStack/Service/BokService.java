@@ -22,12 +22,13 @@ public class BokService {
         return repo.createBok(bok);
     }
 
-    public Bok changeBok(Bok nyBokInfo,int ISBN) {
+    public int changeBok(Bok nyBokInfo,int ISBN) {
         for(int i = 0; i < boeker.size(); i++) {
             Bok current = boeker.get(i);
+            System.out.println(current.getNavn());
             if (current.getISBN() == ISBN) {
-                boeker.set(i, nyBokInfo);
-                break;
+                //boeker.set(i, nyBokInfo);
+                return repo.changeBok(nyBokInfo, ISBN);
             }
         }
         for(Forfatter f: ForfatterService.forfattere){
@@ -38,7 +39,7 @@ public class BokService {
                 }
             }
         }
-        return nyBokInfo;
+        return 0;
     }
 
     public boolean deleteBok(int ISBN) {
