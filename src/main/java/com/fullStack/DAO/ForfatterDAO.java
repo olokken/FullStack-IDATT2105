@@ -1,8 +1,10 @@
 package com.fullStack.DAO;
 
+import com.fullStack.Entities.Adresse;
 import com.fullStack.Entities.Bok;
 import com.fullStack.Entities.Forfatter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
@@ -32,6 +34,30 @@ public class ForfatterDAO {
         namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
         simpleJdbcInsert = new SimpleJdbcInsert(dataSource).withTableName("Forfatter");
         simpleJdbcCall = new SimpleJdbcCall(dataSource).withProcedureName("READ_Bok");
+    }
+
+    public Forfatter createForfatter(Forfatter forfatter) {
+        jdbcTemplate.update("INSERT INTO Adresse (default , ?, ?, ?)",  forfatter.getAdresse().getPostnr(), forfatter.getAdresse().getBy(), forfatter.getAdresse().getGate());
+        jdbcTemplate.update("INSERT INTO Forfatter VALUES (default, ?,  ?, ?)", forfatter.getFoedselsAar(), forfatter.getNavn(), getAdresseId(forfatter.getAdresse()));
+        int forfatterID = getForfatterId(forfatter);
+        forfatter.getBoeker().forEach(x -> {
+            jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", x.getISBN(), x.getNavn(), x.getUtgittAar());
+            jdbcTemplate.update("Insert INTO BokForfatter Values (default, ?, ?)", x.getISBN(), forfatterID);
+        });
+        forfatter.setID(forfatterID);
+        return forfatter;
+    }
+
+    public int getAdresseId(Adresse adresse) {
+        String query = "Select * from Adresse a where a.postnr =" + adresse.getPostnr() + "and  a.by =" + adresse.getBy() + " and a.gate =" + adresse.getGate();
+        ArrayList<Adresse> ad = (ArrayList<Adresse>)jdbcTemplate.query(query, new AdresseRowMapper());
+        return ad.get(0).getID();
+    }
+
+    public int getForfatterId(Forfatter forfatter) {
+        String query = "Select * from Forfatter f where f.foedsels_aar =" + forfatter.getFoedselsAar() + "and  f.navn =" + forfatter.getNavn();
+        ArrayList<Forfatter> forfattere = (ArrayList<Forfatter>)jdbcTemplate.query(query, new ForfatterRowMapper());
+        return forfattere.get(0).getID();
     }
 
     public ArrayList<Forfatter> getForfattere() {

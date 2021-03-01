@@ -42,7 +42,8 @@ public class Adresse{
     public void setID(int ID) {
         this.ID = ID;
     }
-    private int getID() {
+
+    public int getID() {
         return this.getID();
     }
 }
