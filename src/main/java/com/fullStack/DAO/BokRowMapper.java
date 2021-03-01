@@ -13,7 +13,7 @@ public class BokRowMapper implements RowMapper<Bok> {
         final Bok bok = new Bok();
         bok.setISBN(rs.getInt("ISBN"));
         bok.setNavn(rs.getString("navn"));
-        bok.setUtgittAar(rs.getInt("utgittAar"));
+        bok.setUtgittAar(rs.getInt("utgitt_aar"));
         return bok;
     }
 }

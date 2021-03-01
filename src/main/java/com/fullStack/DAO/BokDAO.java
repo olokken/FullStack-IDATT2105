@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class BokDAO {
 
 
     public int createBok(Bok bok) {
-        return jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getNavn(), bok.getISBN(), bok.getUtgittAar());
+        return jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", bok.getISBN(), bok.getNavn(), bok.getUtgittAar());
     }
 
     public int changeBok(Bok nyInfo, int ISBN) {
@@ -59,6 +60,12 @@ public class BokDAO {
     public Bok getBok(int ISBN) {
         final SqlParameterSource namedParameters = new MapSqlParameterSource().addValue("isbn", ISBN);
         return namedParameterJdbcTemplate.queryForObject("SELECT * FROM Bok WHERE ISBN = :isbn", namedParameters, Bok.class);
+    }
+
+    public boolean deleteBok(int ISBN) {
+        String query = "DELETE FROM Bok WHERE ISBN = " + ISBN;
+        jdbcTemplate.execute(query);
+        return true;
     }
 
 }
