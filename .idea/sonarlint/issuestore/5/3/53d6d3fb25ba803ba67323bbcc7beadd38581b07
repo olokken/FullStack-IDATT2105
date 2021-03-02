@@ -1,14 +1,17 @@
 
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïá€êüÿÿÿÿ8ç³»ø.
-r	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ„Ô•ûÿÿÿÿ8ç³»ø.
+r	java:S117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İ„Ô•ûÿÿÿÿ8ç³»ø.
 ^
-java:S34579"AFormat specifiers should be used instead of string concatenation.(‹€È´8şÍÜù.
+java:S3457-"AFormat specifiers should be used instead of string concatenation.(šã¸Á8ĞÚ­ñş.
+_
+java:S1128"=Remove this unused import 'com.fullStack.Service.BokService'.(¡ÙÁÙúÿÿÿÿ8•¯ñş.
+r	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶ÀŒªÿÿÿÿÿ8·»¬ñş.
+Y
+java:S2629'"7Use the built-in formatting to construct this argument.(ö½Ğøÿÿÿÿ8•¯ñş.
 T
-java:S26299"7Use the built-in formatting to construct this argument.(‹€È´8şÍÜù.
-T
-java:S2629="7Use the built-in formatting to construct this argument.(¶¸ºî8şÍÜù.
+java:S2629-"7Use the built-in formatting to construct this argument.(šã¸Á8ĞÚ­ñş.
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğ€¡ë8•¯ñş.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±©àŸ
-^
-java:S3457="AFormat specifiers should be used instead of string concatenation.(¶¸ºî8şÍÜù.
 ’
-java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¼¸ ¸şÿÿÿÿ8ïÏÈ·ø.
+java:S13192"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¼¸ ¸şÿÿÿÿ8ïÏÈ·ø.
+c
+java:S3457'"AFormat specifiers should be used instead of string concatenation.(ö½Ğøÿÿÿÿ8•¯ñş.

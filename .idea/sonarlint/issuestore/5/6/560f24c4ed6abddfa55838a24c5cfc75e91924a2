@@ -1,15 +1,15 @@
 
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±©ΰ
-c
-java:S3457,"AFormat specifiers should be used instead of string concatenation.(€ªδ‘όÿÿÿÿ8•…―ω.
 Y
 java:S2629,"7Use the built-in formatting to construct this argument.(€ªδ‘όÿÿÿÿ8•…―ω.
-r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ϊέ„’ώÿÿÿÿ8³Θιώ.
+c
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(€ªδ‘όÿÿÿÿ8•…―ω.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±©ΰ
+]
+java:S34572"AFormat specifiers should be used instead of string concatenation.(ί”ο8‘λλπώ.
+r	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(αν“κÿÿÿÿÿ8ΤΈ‘‰ω.
 ’
 java:S1319%"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ό΅ΨΊόÿÿÿÿ8ψχÿΊψ.
-]
-java:S34572"AFormat specifiers should be used instead of string concatenation.(ί”ο8³Θιώ.
-r	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(αν“κÿÿÿÿÿ8ΤΈ‘‰ω.
-S
-java:S26292"7Use the built-in formatting to construct this argument.(ί”ο8³Θιώ.
 r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΚΕύώÿÿÿÿ8ψχÿΊψ.
+r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦βΧΦψÿÿÿÿ8‘λλπώ.
+S
+java:S26292"7Use the built-in formatting to construct this argument.(ί”ο8‘λλπώ.

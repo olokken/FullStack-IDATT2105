@@ -7,10 +7,10 @@ public class Adresse{
     private int ID;
 
     public Adresse(int postnr, String by, String gate, int ID) {
+        this.ID = ID;
         this.postnr = postnr;
         this.by = by;
         this.gate = gate;
-        this.ID = ID;
     }
 
     public Adresse(){}
@@ -44,6 +44,6 @@ public class Adresse{
     }
 
     public int getID() {
-        return this.getID();
+        return this.ID;
     }
 }

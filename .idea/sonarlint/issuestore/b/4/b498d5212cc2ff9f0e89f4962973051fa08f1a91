@@ -1,21 +1,14 @@
 
-r	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–“Ý“üÿÿÿÿ8ÇËÈîþ.
-’
-java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(øÄÀÆûÿÿÿÿ8¢¹Úïþ.
-’
-java:S13194"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ8ÇËÈîþ.
-m	java:S117J"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÞùÈÓ8ÇËÈîþ.
-]	java:S125"<This block of commented-out lines of code should be removed.(ÑÀ»®øÿÿÿÿ8Ã¾…ðþ.
-]	java:S125)"<This block of commented-out lines of code should be removed.(ÑÀ»®øÿÿÿÿ8Ã¾…ðþ.
-H
-java:S1172@"+Remove this unused method parameter "navn".(€Æ†¦8Ã¾…ðþ.
-]	java:S125A"<This block of commented-out lines of code should be removed.(ÑÀ»®øÿÿÿÿ8Ã¾…ðþ.
-]	java:S125L"<This block of commented-out lines of code should be removed.(¿ÂÙØûÿÿÿÿ8Ã¾…ðþ.
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖËÊêùÿÿÿÿ
-r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þ˜ºÄøÿÿÿÿ8ÇËÈîþ.
-{
-java:S2293<"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÓÆ³Çÿÿÿÿÿ8Ã¾…ðþ.
-u
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŽŸß=8‡”‰ðþ.
 Y
 java:S1128"=Remove this unused import 'com.fullStack.Entities.Forfatter'.(À¥€8ñª§îþ.
+’
+java:S1319="pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ8ƒô•ðþ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÖËÊêùÿÿÿÿ
+{
+java:S2293F"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÓÆ³Çÿÿÿÿÿ8ƒô•ðþ.
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ðÀÑÀ8²·©ðþ.
+m	java:S117T"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÞùÈÓ8ÝŒêðþ.
+r	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þ˜ºÄøÿÿÿÿ8ÇËÈîþ.
+’
+java:S1319B"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(øÄÀÆûÿÿÿÿ8ƒô•ðþ.
+r	java:S1171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–“Ý“üÿÿÿÿ8ÇËÈîþ.
