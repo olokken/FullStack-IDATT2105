@@ -41,28 +41,30 @@ public class ForfatterDAO {
         //Først legger til adressen i adressetabellen.
         jdbcTemplate.update("INSERT INTO Adresse VALUES(default , ?, ?, ?)", forfatter.getAdresse().getPostnr(), forfatter.getAdresse().getBy(), forfatter.getAdresse().getGate());
         //Deretter legger til forfatteren i forfatterentabellen der jeg bruker methoden(se nedenfor) getAdresseId() som skal returnere id'en til adressen fordi den blir automatisk laget i databsen. (AI)
-        jdbcTemplate.update("INSERT INTO Forfatter VALUES (default, ?,  ?, ?)", forfatter.getID(), forfatter.getFoedselsAar(), forfatter.getNavn(), getAdresseId(forfatter.getAdresse()));
+        jdbcTemplate.update("INSERT INTO Forfatter VALUES (default, ?,  ?, ?)", forfatter.getFoedselsAar(), forfatter.getNavn(), getAdresseId(forfatter.getAdresse()));
         //Skal deretter legge til alle bøkene som kommer med når vi legger til en forfatter. Trenger først forfatterID'en på samme måte som gjort over.
         int forfatterID = getForfatterId(forfatter);
         //Streamer gjennom listen med bøker, og legger først til boka, og deretter en record i koplingstabellen.
-        forfatter.getBoeker().forEach(x -> {
-            jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", x.getISBN(), x.getNavn(), x.getUtgittAar());
-            jdbcTemplate.update("Insert INTO BokForfatter Values (default, ?, ?)", x.getISBN(), forfatterID);
-        });
+        if(forfatter.getBoeker() != null) {
+            forfatter.getBoeker().forEach(x -> {
+                jdbcTemplate.update("INSERT INTO Bok VALUES (?, ?,  ?)", x.getISBN(), x.getNavn(), x.getUtgittAar());
+                jdbcTemplate.update("Insert INTO BokForfatter Values (default, ?, ?)", x.getISBN(), forfatterID);
+            });
+        }
         forfatter.setID(forfatterID);
         return forfatter;
     }
 
 
     public int getAdresseId(Adresse adresse) {
-        String query = "SELECT * FROM Adresse a WHERE a.postnr = " + adresse.getPostnr() + " and a.by = " + adresse.getBy() + " and a.gate = " + adresse.getGate();
+        String query = "SELECT * FROM Adresse WHERE postnr = " + adresse.getPostnr() + " AND adresse_by = " + "'" + adresse.getBy() + "'" + " AND gate = " + "'" + adresse.getGate() + "'";
         ArrayList<Adresse> ad = (ArrayList<Adresse>)jdbcTemplate.query(query, new AdresseRowMapper());
         return ad.get(0).getID();
     }
 
     public int getForfatterId(Forfatter forfatter) {
-        String query = "Select * from Forfatter f where f.foedsels_aar = " + forfatter.getFoedselsAar() + " and  f.navn = " + forfatter.getNavn();
-        ArrayList<Forfatter> forfattere = (ArrayList<Forfatter>)jdbcTemplate.query(query, new ForfatterRowMapper());
+        String query = "Select * from Forfatter f where f.foedsels_aar = " + forfatter.getFoedselsAar() + " and  f.navn = " + "'" + forfatter.getNavn() + "'";
+        ArrayList<Forfatter> forfattere = (ArrayList<Forfatter>)jdbcTemplate.query(query, new ForfatterOnlyRowMapper());
         return forfattere.get(0).getID();
     }
 

@@ -1,29 +1,29 @@
 
-i
-java:S2259U"GA "NullPointerException" could be thrown; "forfatter" is nullable here.(‹”Ãáşÿÿÿÿ8†Á“ÿ.
-r
-java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8†Á“ÿ.
-m	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü µ8†Á“ÿ.
-m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ™×±8†Á“ÿ.
-i
-java:S2259b"GA "NullPointerException" could be thrown; "forfatter" is nullable here.(‹”Ãáşÿÿÿÿ8†Á“ÿ.
-r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¸òÌıÿÿÿÿ8†Á“ÿ.
-Z
-java:S1068">Remove this unused "namedParameterJdbcTemplate" private field.(–ª”k8†Á“ÿ.
-T
-java:S1068"2Remove this unused "simpleJdbcCall" private field.(à§óèûÿÿÿÿ8†Á“ÿ.
+Q
+java:S1068"4Remove this unused "simpleJdbcInsert" private field.(ş•´8†Á“ÿ.
 e
 java:S1128"HRemove this unused import 'com.fasterxml.jackson.annotation.JsonIgnore'.(ş‘‹„8†Á“ÿ.
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰±æÌ8†Á“ÿ.
+m	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü µ8†Á“ÿ.
 
 java:S1450"]Remove the "simpleJdbcCall" field and declare it as a local variable in the relevant methods.(à§óèûÿÿÿÿ8†Á“ÿ.
+Z
+java:S1068">Remove this unused "namedParameterJdbcTemplate" private field.(–ª”k8†Á“ÿ.
 ’
 java:S1319E"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Ôªƒ¹üÿÿÿÿ8†Á“ÿ.
 |
 java:S1450"_Remove the "simpleJdbcInsert" field and declare it as a local variable in the relevant methods.(ş•´8†Á“ÿ.
-Q
-java:S1068"4Remove this unused "simpleJdbcInsert" private field.(ş•´8†Á“ÿ.
-…
-java:S1450"iRemove the "namedParameterJdbcTemplate" field and declare it as a local variable in the relevant methods.(–ª”k8†Á“ÿ.
-v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰±æÌ8†Á“ÿ.
+i
+java:S2259b"GA "NullPointerException" could be thrown; "forfatter" is nullable here.(‹”Ãáşÿÿÿÿ8†Á“ÿ.
 H
 java:S1602G",Remove useless curly braces around statement(¥±Øl8†Á“ÿ.
+m	java:S117_"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ™×±8†Á“ÿ.
+…
+java:S1450"iRemove the "namedParameterJdbcTemplate" field and declare it as a local variable in the relevant methods.(–ª”k8†Á“ÿ.
+T
+java:S1068"2Remove this unused "simpleJdbcCall" private field.(à§óèûÿÿÿÿ8†Á“ÿ.
+r	java:S117Y"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(û¸òÌıÿÿÿÿ8†Á“ÿ.
+i
+java:S2259U"GA "NullPointerException" could be thrown; "forfatter" is nullable here.(‹”Ãáşÿÿÿÿ8†Á“ÿ.
+r
+java:S1128"PRemove this unused import 'org.springframework.jdbc.core.BeanPropertyRowMapper'.(ß©Å´ÿÿÿÿÿ8†Á“ÿ.

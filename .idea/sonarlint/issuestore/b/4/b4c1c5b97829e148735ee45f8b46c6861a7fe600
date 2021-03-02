@@ -1,27 +1,27 @@
 
 x
-java:S1128"[Remove this unused import 'org.springframework.jdbc.core.namedparam.MapSqlParameterSource'.(²Ñ8úàêğş.
-x
 java:S1488C"[Immediately return this expression instead of assigning it to the temporary variable "bok".(½öœ8Ş‡åğş.
-r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÔ¹üÿÿÿÿ8ƒ„·íş.
-|
-java:S1450"_Remove the "simpleJdbcInsert" field and declare it as a local variable in the relevant methods.(ş•´8¥ôÀíş.
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞùÈÓ8Œëéğş.
+T
+java:S1068"2Remove this unused "simpleJdbcCall" private field.(à§óèûÿÿÿÿ8Ìì¼ğü.
 Q
 java:S1068"4Remove this unused "simpleJdbcInsert" private field.(ş•´8¥ôÀíş.
-…
-java:S1450"iRemove the "namedParameterJdbcTemplate" field and declare it as a local variable in the relevant methods.(–ª”k8úàêğş.
-Z
-java:S1068">Remove this unused "namedParameterJdbcTemplate" private field.(–ª”k8úàêğş.
+
+java:S1450"]Remove the "simpleJdbcCall" field and declare it as a local variable in the relevant methods.(à§óèûÿÿÿÿ8¯ºÏğü.
 r	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–“İ“üÿÿÿÿ8Ø÷üëş.
-u
-java:S1128"XRemove this unused import 'org.springframework.jdbc.core.namedparam.SqlParameterSource'.(Å›É8úàêğş.
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰±æÌ
 w
 java:S14887"[Immediately return this expression instead of assigning it to the temporary variable "bok".(ª±ÿL8úàêğş.
-T
-java:S1068"2Remove this unused "simpleJdbcCall" private field.(à§óèûÿÿÿÿ8Ìì¼ğü.
-m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞùÈÓ8Œëéğş.
+u
+java:S1128"XRemove this unused import 'org.springframework.jdbc.core.namedparam.SqlParameterSource'.(Å›É8úàêğş.
 ’
 java:S1319'"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ü¡Øºüÿÿÿÿ8ú¹èğü.
-
-java:S1450"]Remove the "simpleJdbcCall" field and declare it as a local variable in the relevant methods.(à§óèûÿÿÿÿ8¯ºÏğü.
+x
+java:S1128"[Remove this unused import 'org.springframework.jdbc.core.namedparam.MapSqlParameterSource'.(²Ñ8úàêğş.
+…
+java:S1450"iRemove the "namedParameterJdbcTemplate" field and declare it as a local variable in the relevant methods.(–ª”k8úàêğş.
+r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËÔ¹üÿÿÿÿ8ƒ„·íş.
+|
+java:S1450"_Remove the "simpleJdbcInsert" field and declare it as a local variable in the relevant methods.(ş•´8¥ôÀíş.
+Z
+java:S1068">Remove this unused "namedParameterJdbcTemplate" private field.(–ª”k8úàêğş.

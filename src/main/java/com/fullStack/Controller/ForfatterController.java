@@ -21,16 +21,19 @@ public class ForfatterController {
 
     @PostMapping("/forfattere")
     public Forfatter createForfatter(@RequestBody Forfatter forfatter){
+        logger.info("Klienten laget en ny forfatter med navn: " + forfatter.getNavn());
         return service.createForfatter(forfatter);
     }
 
     @PutMapping("/forfattere/{ID}")
     public Forfatter changeForfatter(@RequestBody Forfatter nyForfatterInfo, @PathVariable int ID) {
+        logger.info("Klienten endret forfatter med ID: " + ID);
         return service.changeForfatter(nyForfatterInfo,ID);
     }
 
     @DeleteMapping("/forfattere/{ID}")
     public boolean deleteForfatter(@PathVariable int ID) {
+        logger.info("Klientet slettet forfatter med ID: " + ID);
         return service.deleteForfatter(ID);
     }
 

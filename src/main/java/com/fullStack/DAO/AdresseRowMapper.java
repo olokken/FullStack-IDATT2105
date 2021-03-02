@@ -13,8 +13,8 @@ public class AdresseRowMapper implements RowMapper<Adresse> {
         final Adresse adresse = new Adresse();
         adresse.setID(rs.getInt("adresse_id"));
         adresse.setPostnr(rs.getInt("postnr"));
+        adresse.setBy(rs.getString("adresse_by"));
         adresse.setGate(rs.getString("gate"));
-        adresse.setBy(rs.getString("by"));
         return adresse;
     }
 }

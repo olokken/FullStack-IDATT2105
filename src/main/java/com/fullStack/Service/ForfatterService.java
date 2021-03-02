@@ -31,14 +31,16 @@ public class ForfatterService {
     }
 
     public Forfatter createForfatter(Forfatter forfatter){
-        //initForfatter();
+        initForfatter();
         forfatterDAO.createForfatter(forfatter);
         forfattere.add(forfatter);
-        forfatter.getBoeker().forEach(x -> {
-            if (!BokService.boeker.contains(x)){
-                BokService.boeker.add(x);
-            }
-        });
+        if(forfatter.getBoeker() != null) {
+            forfatter.getBoeker().forEach(x -> {
+                if (!BokService.boeker.contains(x)) {
+                    BokService.boeker.add(x);
+                }
+            });
+        }
         return forfatter;
     }
 
