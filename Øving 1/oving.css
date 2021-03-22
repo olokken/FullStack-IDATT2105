@@ -1,0 +1,147 @@
+body {
+    margin: 0px;
+}
+
+.Container {
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-right: 20px;
+    background-image: url("Bilder/Footer-Bakgrunn.jpg");
+    font-size: large;
+    height: 100%;
+}
+
+footer address {
+    margin: 20px;
+    color: black;
+}
+
+
+.Menubar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.Menu-Links {
+    padding-right: 20px;
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+}
+
+.Menu-Links a {
+    color: #8a8a8a;
+    text-decoration: none;
+    padding-right: 8px;
+}
+
+.Menu-Links :hover {
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+
+.Header {
+    text-align: center;
+    background: whitesmoke;
+    color: black;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+}
+.Overskrift {
+    justify-content: center;
+}
+
+.header-bilde img {
+    max-width: 75px;
+    max-height: 750px;
+    margin-left: 8px;
+}
+
+.Main-Header{
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    justify-content: center;
+}
+
+.Main-Header img {
+    width:50px;
+    max-height: 50px;
+}
+
+.Info-Header {
+    font-family: Papyrus;
+}
+
+h5, h1 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.Bilder {
+    height: 400px;
+    width: 90%;
+    
+}
+
+@media (max-width:650px) {
+    .Bilder {
+        height: 250px;
+    }
+}
+
+.Main {
+    margin-top: 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.Main div {
+    text-align: center;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 5px;
+}
+
+.aviser img {
+    border: 1px solid black;
+}
+
+.Main a {
+    color: black;
+}
+
+
+
+.avis :hover {
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
