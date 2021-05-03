@@ -50,7 +50,7 @@ export default {
     },
     calculate() {
       const onExecute = async () => {
-        const response = await fetch("http://localhost:5000/calc", {
+        const response = await fetch("http://localhost:3000/calc", {
           method: "POST",
           headers: {
             Accept: "application/json",
